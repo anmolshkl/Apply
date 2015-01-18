@@ -40,13 +40,15 @@
 		            $stmt->execute();
 		            $rows=$stmt->fetch();
 		            echo "user not found";
-		            if($rows > 0 ) {
-		                //for now sending error as a plain string,can be sent as JSON object instead
-		                echo 'username exists';
-		            }
-		        } catch(PDOException $e) {
+		            
+		        } 
+		        catch(PDOException $e) {
 					    echo 'ERROR: ' . $e->getMessage();
 				}
+				if($rows > 0 ) {
+		                //for now sending error as a plain string,can be sent as JSON object instead
+		                echo 'username exists';
+		        }
 	            else {
 					try {
 					    $query = "INSERT INTO users (full_name,email,contact,institue,idea,idea_extra) 
