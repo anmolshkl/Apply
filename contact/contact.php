@@ -1,31 +1,38 @@
 <?php
-	require_once "pear/Mail.php";
-	include "pear/Mail/mime.php" ;
+	session_start();
+	$name="";
+	$email="";
+	$query="";
 
-	$from = '<anmolshkl@gmail.com>';
-	$to = '<anmolshkl@gmail.com>';
-	$subject = 'Hi!';
-	$body = "Hi,\n\nHow are you?";
+	$username = 'apply';
+	$password = 'admin123';
+	if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['query'])) {
 
-	$headers = array(
-	    'From' => $from,
-	    'To' => $to,
-	    'Subject' => $subject
-	);
+		if($_POST['name']!='' && $_POST['email']!='' && $_POST['query']!='') {
 
-	$smtp = Mail::factory('smtp', array(
-	        'host' => 'ssl://smtp.gmail.com',
-	        'port' => '465',
-	        'auth' => true,
-	        'username' => 'anmolshkl@gmail.com',
-	        'password' => 'asaf-123'
-	    ));
-
-	$mail = $smtp->send($to, $headers, $body);
-
-	if (PEAR::isError($mail)) {
-	    echo('<p>' . $mail->getMessage() . '</p>');
-	} else {
-	    echo('<p>Message successfully sent!</p>');
+			$name=$_POST['name'];
+			$email=$_POST['email'];
+			$query=$_POST['query'];
+			try {
+				$conn = new PDO('mysql:host=localhost;dbname=app-ly', $username, $password);
+				$query = "INSERT INTO contact_form (name,email,query) 
+					    		  VALUES(:name,:email,:query)";
+				$stmt = $conn->prepare($query);
+                $stmt->bindParam(':name', $name, PDO::PARAM_STR);
+                $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+                $stmt->bindParam(':query', $query, PDO::PARAM_STR);
+                $stmt->execute();
+                echo "message sent!";
+			}
+			catch(PDOException $e) {
+			 	echo 'ERROR: ' . $e->getMessage();
+			}
+		}
+		else {
+			echo "Please check the Input";
+		}
+	}
+	else {
+		echo "Please check the Input";
 	}
 ?>

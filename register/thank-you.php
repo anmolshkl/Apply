@@ -28,12 +28,8 @@
 		    font-family: 'Comfortaa', cursive !important;
 		    font-size: 20px; 
 		}
-		img {
-			max-height: 200px;
-		}
 		.trans {
-			padding: 50px;
-			margin-top: 4%;
+			padding: 20px;
 			background: rgba(159,182,205, 0.2);
 			border-radius: 5px;
 			text-align: center;
@@ -44,8 +40,9 @@
 	</head>
 	<body>
 		<div class="container-fluid">
-			<div class="col-xs-12 trans">
+			<div class="col-xs-8 col-xs-offset-2 trans">
 				<?php if(isset($_SESSION['registered']) && $_SESSION['registered'] != false) { ?>
+				  We'll keep you in loop.Stay Tuned!
 				  <img class="img-responsive" src="/register/02.png" />
 				<?php } else { ?>
 				  <h1> Sorry, you have already registered! </h1>
