@@ -23,8 +23,11 @@
 			$institute=$_POST['institute'];
 			$contact=$_POST['contact'];
 			$email=$_POST['email'];
+			print_r($_POST);
 			if (preg_match($regex1, $email)) {
+				echo "email macthed";
 				try {
+					echo "make connection";
 					$conn = new PDO('mysql:host=localhost;dbname=app-ly', $username, $password);
 					
 					$query = "SELECT user_id FROM users WHERE email= :email";
@@ -32,6 +35,7 @@
 		            $stmt->bindParam(':email', $email, PDO::PARAM_STR);
 		            $stmt->execute();
 		            $rows=$stmt->fetch();
+		            echo "user not found";
 		            if($rows > 0 ) {
 		                //for now sending error as a plain string,can be sent as JSON object instead
 		                echo 'username exists';
