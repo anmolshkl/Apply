@@ -13,7 +13,7 @@
 		<meta name="author" content="VNITs" />
 		
 		<link rel="shortcut icon" href="../favicon.ico">
-		<link rel="stylesheet" type="text/css" href="../home/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="/home/bootstrap.min.css">
 		<link href='http://fonts.googleapis.com/css?family=Comfortaa:400,700' rel='stylesheet' type='text/css'>
 		<style>
 		html {
@@ -36,6 +36,7 @@
 			margin-top: 4%;
 			background: rgba(159,182,205, 0.2);
 			border-radius: 5px;
+			text-align: center;
 		}
 		
 		</style>
@@ -45,13 +46,13 @@
 		<div class="container-fluid">
 			<div class="col-xs-6 col-xs-offset-3 trans">
 				<?php if(isset($_SESSION['registered']) && $_SESSION['registered'] != false) { ?>
-				  <img class="img-responsive" src="02.png" />
+				  <img class="img-responsive" src="/register/02.png" />
 				<?php } else { ?>
 				  <h1> Sorry, you have already registered! </h1>
 				<?php } ?>
 			</div>
 		</div>
 	
-		<script type="text/javascript" src="../home/jquery-2.1.3.min.js"></script>
-		<script type="text/javascript" src="../home/bootstrap.min.js"></script>
+		<script type="text/javascript" src="/home/jquery-2.1.3.min.js"></script>
+		<script type="text/javascript" src="/home/bootstrap.min.js"></script>
 	</body>
