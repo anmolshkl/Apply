@@ -17,7 +17,6 @@
 
 		if($_POST['full_name']!='' && $_POST['idea']!='' && $_POST['idea_extra']!='' && $_POST['email']!=''
 		&& $_POST['contact']!='' && $_POST['institute']!='') {
-			echo "THANK YOU";
 			$full_name=$_POST['full_name'];
 			$idea=$_POST['idea'];
 			$idea_extra=$_POST['idea_extra'];
