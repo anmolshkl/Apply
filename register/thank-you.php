@@ -20,7 +20,7 @@
 			padding: 7px;
 		}
 		body {
-			background: url('../home/img.jpg') no-repeat center center fixed;
+			background: url('/home/img.jpg') no-repeat center center fixed;
 		    -webkit-background-size: cover;
 		    -moz-background-size: cover;
 		    -o-background-size: cover;
@@ -44,7 +44,7 @@
 	</head>
 	<body>
 		<div class="container-fluid">
-			<div class="col-xs-6 col-xs-offset-3 trans">
+			<div class="col-xs-12 trans">
 				<?php if(isset($_SESSION['registered']) && $_SESSION['registered'] != false) { ?>
 				  <img class="img-responsive" src="/register/02.png" />
 				<?php } else { ?>
