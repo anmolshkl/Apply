@@ -33,6 +33,7 @@
 			background: rgba(159,182,205, 0.2);
 			border-radius: 5px;
 			text-align: center;
+			line-height: 0px;
 		}
 		
 		</style>
