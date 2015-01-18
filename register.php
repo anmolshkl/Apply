@@ -9,7 +9,7 @@
 	//regular expression to match an email
 	$regex1 = '/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/';
 
-	$username = 'ubuntu';
+	$username = 'apply';
 	$password = 'admin123';
 	#print_r($_POST);
 	if(isset($_POST['full_name']) && isset($_POST['idea']) && isset($_POST['idea_extra']) && isset($_POST['institute'])
@@ -24,18 +24,21 @@
 			$contact=$_POST['contact'];
 			$email=$_POST['email'];
 			if (preg_match($regex1, $email)) {
-				
-				$conn = new PDO('mysql:host=localhost;dbname=app-ly', $username, $password);
-				
-				$query = "SELECT user_id FROM users WHERE email= :email";
-	            $stmt = $conn->prepare($query);
-	            $stmt->bindParam(':email', $email, PDO::PARAM_STR);
-	            $stmt->execute();
-	            $rows=$stmt->fetch();
-	            if($rows > 0 ) {
-	                //for now sending error as a plain string,can be sent as JSON object instead
-	                echo 'username exists';
-	            }
+				try {
+					$conn = new PDO('mysql:host=localhost;dbname=app-ly', $username, $password);
+					
+					$query = "SELECT user_id FROM users WHERE email= :email";
+		            $stmt = $conn->prepare($query);
+		            $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+		            $stmt->execute();
+		            $rows=$stmt->fetch();
+		            if($rows > 0 ) {
+		                //for now sending error as a plain string,can be sent as JSON object instead
+		                echo 'username exists';
+		            }
+		        } catch(PDOException $e) {
+					    echo 'ERROR: ' . $e->getMessage();
+				}
 	            else {
 					try {
 					    $query = "INSERT INTO users (full_name,email,contact,institue,idea,idea_extra) 
@@ -49,7 +52,7 @@
 		                $stmt->bindParam(':idea', $idea, PDO::PARAM_STR);
 		                $stmt->bindParam(':idea_ex', $idea_extra, PDO::PARAM_STR);
 						$stmt->execute();
-
+						echo "DONE!<br>";
 					} catch(PDOException $e) {
 					    echo 'ERROR: ' . $e->getMessage();
 					}
