@@ -23,6 +23,7 @@
 			$institute=$_POST['institute'];
 			$contact=$_POST['contact'];
 			$email=$_POST['email'];
+			$selected=false;
 			if (preg_match($regex1, $email)) {
 				try {
 					$conn = new PDO('mysql:host=localhost;dbname=app-ly', $username, $password);
@@ -53,7 +54,7 @@
 		                $stmt->bindParam(':insti', $institute, PDO::PARAM_STR);
 		                $stmt->bindParam(':idea', $idea, PDO::PARAM_STR);
 		                $stmt->bindParam(':idea_ex', $idea_extra, PDO::PARAM_STR);
-						$stmt->bindParam(':selected', false, PDO::PARAM_BOOL);
+						$stmt->bindParam(':selected', $selected, PDO::PARAM_BOOL);
 						$stmt->execute();
 					} catch(PDOException $e) {
 					    echo 'ERROR: ' . $e->getMessage();
