@@ -11,12 +11,16 @@
 
 	$username = 'apply';
 	$password = 'admin123';
+	echo "1";
 	#print_r($_POST);
 	if(isset($_POST['full_name']) && isset($_POST['idea']) && isset($_POST['idea_extra']) && isset($_POST['institute'])
 		&& isset($_POST['contact']) && isset($_POST['email'])) {
+			echo "2";
 
 		if($_POST['full_name']!='' && $_POST['idea']!='' && $_POST['idea_extra']!='' && $_POST['email']!=''
 		&& $_POST['contact']!='' && $_POST['institute']!='') {
+				echo "3";
+
 			$full_name=$_POST['full_name'];
 			$idea=$_POST['idea'];
 			$idea_extra=$_POST['idea_extra'];
