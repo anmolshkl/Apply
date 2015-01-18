@@ -25,7 +25,6 @@
 			$email=$_POST['email'];
 			if (preg_match($regex1, $email)) {
 				try {
-					echo "make connection";
 					$conn = new PDO('mysql:host=localhost;dbname=app-ly', $username, $password);
 					
 					$query = "SELECT user_id FROM users WHERE email= :email";
@@ -40,12 +39,12 @@
 				}
 				if($rows > 0 ) {
 		                //for now sending error as a plain string,can be sent as JSON object instead
-		                echo 'username exists';
+		                $_SESSION['registered'] = false;
 		        }
 	            else {
 					try {
-					    $query = "INSERT INTO users (full_name,email,contact,institute,idea,idea_extra) 
-					    		  VALUES(:fn,:email,:contact,:insti,:idea,:idea_ex)";
+					    $query = "INSERT INTO users (full_name,email,contact,institute,idea,idea_extra,selected) 
+					    		  VALUES(:fn,:email,:contact,:insti,:idea,:idea_ex,:selected)";
 			             
 			            $stmt = $conn->prepare($query);
 		                $stmt->bindParam(':fn', $full_name, PDO::PARAM_STR);
@@ -54,14 +53,13 @@
 		                $stmt->bindParam(':insti', $institute, PDO::PARAM_STR);
 		                $stmt->bindParam(':idea', $idea, PDO::PARAM_STR);
 		                $stmt->bindParam(':idea_ex', $idea_extra, PDO::PARAM_STR);
+						$stmt->bindParam(':selected', false, PDO::PARAM_BOOL);
 						$stmt->execute();
-						echo "DONE!<br>";
 					} catch(PDOException $e) {
 					    echo 'ERROR: ' . $e->getMessage();
 					}
-
-					$_SESSION['message'] = "You have successfully registered!";
-					header('Location: http://www.app-ly.in/register/thank-you/?message=Success');
+					$_SESSION['registered'] = true;
+					header('Location: http://www.app-ly.in/register/thank-you.php/');
 				}
 
 			}

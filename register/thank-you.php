@@ -1,4 +1,7 @@
-!DOCTYPE html>
+<?php 
+	session_start();
+?>
+<!DOCTYPE html>
 <html lang="en" >
 	<head>
 		<meta charset="UTF-8" />
@@ -34,18 +37,18 @@
 			background: rgba(159,182,205, 0.2);
 			border-radius: 5px;
 		}
-		.btn {
-			width: 150px;
-			height: 40px;
-			font-size: 20px;
-		}
+		
 		</style>
     
 	</head>
 	<body>
 		<div class="container-fluid">
-			<div class="col-xs-12">
-				
+			<div class="col-xs-6 col-xs-offset-3 trans">
+				<?php if(isset($_SESSION['registered']) && $_SESSION['registered'] != false) { ?>
+				  <img class="img-responsive" src="02.png" />
+				<?php } else { ?>
+				  <h1> Sorry, you have already registered! </h1>
+				<?php } ?>
 			</div>
 		</div>
 	
