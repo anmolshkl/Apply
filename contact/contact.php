@@ -15,9 +15,9 @@
 			$query=$_POST['query'];
 			try {
 				$conn = new PDO('mysql:host=localhost;dbname=app-ly', $username, $password);
-				$query = "INSERT INTO contact_form (name,email,query) 
+				$dbQuery = "INSERT INTO contact_form (name,email,query) 
 					    		  VALUES(:name,:email,:query)";
-				$stmt = $conn->prepare($query);
+				$stmt = $conn->prepare($dbQuery);
                 $stmt->bindParam(':name', $name, PDO::PARAM_STR);
                 $stmt->bindParam(':email', $email, PDO::PARAM_STR);
                 $stmt->bindParam(':query', $query, PDO::PARAM_STR);
