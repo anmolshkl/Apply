@@ -33,7 +33,10 @@
 			background: rgba(159,182,205, 0.2);
 			border-radius: 5px;
 			text-align: center;
-			line-height: 0px;
+		}
+		img {
+			margin: 0 auto !important;
+			padding: 10px;
 		}
 		
 		</style>
@@ -43,7 +46,7 @@
 		<div class="container-fluid">
 			<div class="col-xs-8 col-xs-offset-2 trans">
 				<?php if(isset($_SESSION['registered']) && $_SESSION['registered'] != false) { ?>
-				  We'll keep you in loop.Stay Tuned!
+				  We'll keep you in loop.<br>Stay Tuned!
 				  <img class="img-responsive" src="/register/021.png" />
 				<?php } else { ?>
 				  <h1> Sorry, you have already registered! </h1>
