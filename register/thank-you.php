@@ -51,7 +51,6 @@
 				<?php } else { ?>
 				  <h1> Sorry, you have already registered! </h1>
 				<?php } ?>
-				<?php print_r($_SESSION); ?>
 			</div>
 		</div>
 	
