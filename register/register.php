@@ -56,11 +56,12 @@
 		                $stmt->bindParam(':idea_ex', $idea_extra, PDO::PARAM_STR);
 						$stmt->bindParam(':selected', $selected, PDO::PARAM_BOOL);
 						$stmt->execute();
+						$_SESSION['registered'] = true;
+						header('Location: http://www.app-ly.in/register/thank-you.php/');
 					} catch(PDOException $e) {
 					    echo 'ERROR: ' . $e->getMessage();
 					}
-					$_SESSION['registered'] = true;
-					header('Location: http://www.app-ly.in/register/thank-you.php/');
+					
 				}
 
 			}

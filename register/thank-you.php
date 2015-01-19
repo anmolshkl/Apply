@@ -7,7 +7,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1"> 
-		<title>Contact Us!</title>
+		<title>Thank You!!</title>
 		<meta name="description" content="App-ly is an event organized by Consortium,VNIT.App-ly is looking for out-of-box app ideas that can redefine the way of living." />
 		<meta name="keywords" content="vnit, consortium, app contest, apply, app-ly, ideas" />
 		<meta name="author" content="VNITs" />
@@ -26,7 +26,7 @@
 		    -o-background-size: cover;
 		    background-size: cover;
 		    font-family: 'Comfortaa', cursive !important;
-		    font-size: 20px; 
+		    font-size: 25px; 
 		}
 		.trans {
 			padding: 20px;
@@ -44,10 +44,11 @@
 			<div class="col-xs-8 col-xs-offset-2 trans">
 				<?php if(isset($_SESSION['registered']) && $_SESSION['registered'] != false) { ?>
 				  We'll keep you in loop.Stay Tuned!
-				  <img class="img-responsive" src="/register/02.png" />
+				  <img class="img-responsive" src="/register/021.png" />
 				<?php } else { ?>
 				  <h1> Sorry, you have already registered! </h1>
 				<?php } ?>
+				<?php print_r($_SESSION); ?>
 			</div>
 		</div>
 	
