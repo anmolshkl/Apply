@@ -41,6 +41,7 @@
 				if($rows > 0 ) {
 		                //for now sending error as a plain string,can be sent as JSON object instead
 		                $_SESSION['registered'] = false;
+		                header('Location: http://www.app-ly.in/register/thank-you.php/');
 		        }
 	            else {
 					try {
