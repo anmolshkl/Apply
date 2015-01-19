@@ -7,7 +7,7 @@
 	$contact="";
 	$email="";
 	//regular expression to match an email
-	$regex1 = '/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/';
+	$regex1 = '/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/';
 
 	$username = 'apply';
 	$password = 'admin123';

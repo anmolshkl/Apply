@@ -172,14 +172,15 @@ h3 {
 	height: 40px;
 	font-size: 15px !important;
 	font-family: 'Comfortaa', cursive !important;
-	background: transparent;
+	background: rgba(159,182,205, 0.5);
 	border: none;
 	transition: all .2s ease-in-out;
 	-webkit-transition: all .2s ease-in-out;
 	text-decoration: none;
 	color: white !important;
 	text-align: center;
-	padding-top: 5px;
+	padding-top: 7px;
+	margin: 2px;
 }
 .register:hover, .contact:hover {
 	background: rgba(159,182,205, 0.5);
@@ -189,6 +190,10 @@ h3 {
 	-webkit-transform: scale(1.1);
 	text-decoration: none;
 	color: white !important;
+}
+.organizers {
+	font-size: 20px;
+	text-align: center;
 }
 .owl-carousel {
 	width: 100%;
@@ -298,6 +303,10 @@ h3 {
 .loaded .ip-logo,
 .loaded .ip-loader {
 	opacity: 1;
+}
+.conso-logo {
+	
+
 }
 
 .loaded .ip-logo {

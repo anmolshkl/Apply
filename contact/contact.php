@@ -1,5 +1,4 @@
 <?php
-	session_start();
 	$name="";
 	$email="";
 	$query="";
@@ -22,7 +21,7 @@
                 $stmt->bindParam(':email', $email, PDO::PARAM_STR);
                 $stmt->bindParam(':query', $query, PDO::PARAM_STR);
                 $stmt->execute();
-                echo "message sent!";
+                echo "Thanks for contacting us!<br> We'll get back to you as soon as possible :)";
 			}
 			catch(PDOException $e) {
 			 	echo 'ERROR: ' . $e->getMessage();

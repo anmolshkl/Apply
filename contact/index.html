@@ -39,6 +39,9 @@
 			height: 40px;
 			font-size: 20px;
 		}
+		.modal {
+			text-align: center;
+		}
 		</style>
     
 	</head>
@@ -65,7 +68,7 @@
 		</div>
 		<div class="container-fluid">
 			<div class="col-xs-6 col-xs-offset-3 trans">
-				<form id="form" method="POST" action="/contact/contact.php" class="form-horizontal">
+				<form id="form" method="POST" action="contact.php" class="form-horizontal">
 				<div class="form-group">
 				    <label for="name">Name:</label>
 				    <input type="text" name="name" class="form-control" id="name" >
@@ -95,15 +98,18 @@
             if(validate() == true) {
                   var formData = new FormData($(this)[0]);
               	  //document.getElementById("form").submit();
+              	  alert("valid");
 	              $.ajax({
-		              url: '/contact/contact.php',
+		              url: 'contact.php',
 		              type: 'POST',
 		              data: formData,
 		              contentType: false,
 		              processData: false,
+		              dataType: "text",
 		              success: function (returndata) {
-		                  $("#form").hide();
+		                  $("#form").remove();
 		                  $(".trans").html("<h1>"+returndata+"</h1>");
+		                  $(".trans").css({"text-align":"center"});
 		              }
 	              });
             }
@@ -118,8 +124,8 @@
             for(var i = 0; i < inputs.length; i++) {
                 if(inputs[i].value == '' ) {
                     ret = false;
-                    inputs[i].style.borderColor = 'red';
-                    inputs[i].style.boxShadow =  "0 0 10px red";
+                    inputs[i].style.borderColor = 'white';
+                    inputs[i].style.boxShadow =  "0 0 20px red";
                     if(flag === false) {
                       msg += "Please check all the input fields!\n";
                       flag = true;
@@ -128,12 +134,12 @@
             }
 			var txt = $("textarea");
 			if(txt.val().trim() == '') {
-				msg+="Please enter your query!";
+				msg+="<br>Please enter your query!";
 				ret = false;
 			}
 
             if(ret == false) {
-            	$(.modal-body).html(msg);
+            	$(".modal-body").html(msg);
             	$('#myModal').modal('show');
             }
             return ret;
