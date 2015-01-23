@@ -163,35 +163,6 @@ h3 {
     position: relative;
 
 }
-.trans2 {
-    background: rgba(159,182,205, 0.5) !important;
-    padding: 10px;
-    position: relative;
-    border-radius: 5px;
-    text-align: center;
-    font-size: 18px;
-    margin-bottom: 15px;
-}
-.clear-right {
-	clear: right;
-}
-.notice {
-	background: rgba(159,182,205, 0.5) !important;
-	position: fixed;
-	bottom: 5px;
-	left: 5px;
-	height: 100px;
-	width: 300px;
-	font-size: 15px;
-	padding: 5px;
-	border-radius: 5px;
-}
-.notice .close {
-	position: relative;
-	bottom: 0px;
-	right: 0px;
-
-}
 .links {
 	width: 100%;
 	text-align: center;
@@ -210,7 +181,6 @@ h3 {
 	text-align: center;
 	padding-top: 7px;
 	margin: 2px;
-	z-index: 99;
 }
 .register:hover, .contact:hover {
 	background: rgba(159,182,205, 0.5);

@@ -1,0 +1,5 @@
+Options -Indexes
+DirectoryIndex home/index.html
+RewriteEngine On
+RewriteCond %{HTTP_HOST} !^www\..* [NC]
+RewriteRule ^(.*) http://www.%{HTTP_HOST}/$1 [R=301]
