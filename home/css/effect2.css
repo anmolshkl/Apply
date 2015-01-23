@@ -181,6 +181,7 @@ h3 {
 	text-align: center;
 	padding-top: 7px;
 	margin: 2px;
+	z-index: 99;
 }
 .register:hover, .contact:hover {
 	background: rgba(159,182,205, 0.5);
