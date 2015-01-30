@@ -19,14 +19,41 @@
      
 	    <!-- Default Theme -->
 	    <link rel="stylesheet" href="/home/owl-carousel/owl.theme.css">
- 		<link rel="stylesheet" type="/home/text/css" href="/home/css/demo.css" />
-		<link rel="stylesheet" type="/home/text/css" href="/home/css/effect2.css" />
+ 		<link rel="stylesheet" type="text/css" href="/home/css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="/home/css/effect2.css" />
 		
      
     
 	</head>
 	<body class="demo-2">
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog  modal-lg">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title" style="color:black;" id="myModalLabel">And the winners are....!!</h4>
+		      </div>
+		      <div class="modal-body" style="text-align:center;">
+		        <p style="color:black;size:20px !important">We have received overwhelming response from participants and some mind-blowing ideas. But we can't declare every good idea as the winner and so with the help of our brilliant judges we have finalised the following winners:</p>
+		        <hr>
+		        <h1 style="font-size:30px !important;">Winner:</h1><h2 style="font-size:25px !important;">Anil reddy</h2>
+		        <hr>
+		        <h1 style="font-size:30px !important;">Runner-up 1:</h1><h2 style="font-size:25px !important;">Shantanu Bhosale</h2>
+		        <hr>
+				<h1 style="font-size:30px !important;">Runner-up 2:</h1><h2 style="font-size:25px !important;">Akshay Kulkarni</h2>
+				<hr>
+				<h1 style="font-size:30px !important;">Most Unique Idea:</h1><h2 style="font-size:25px !important;">Adhitya kamakshidasan</h2>
 
+
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-lg btn-default btn-danger" data-dismiss="modal">Close</button>
+
+		      </div>
+		    </div>
+		  </div>
+		</div>
 		<div id="ip-container" class="ip-container">
 			<!-- initial header -->
 			<header class="ip-header">
@@ -1760,8 +1787,11 @@
 		</div>
 		</header>
 		<img class="img-responsive conso-logo" style="position:relative;top: 35px;width: 30%;height: 20%" src="/home/img/Conso-logo.png"/>
+		<!--
 		<a href="/register/" class="register btn-large" style="position: fixed; top: 9%;right: 2%">Register</a>
 		<a href="/contact/" class="contact btn-large" style="position: fixed; top: 18%;right:2%;">Contact Us</a>
+		-->
+		<a class="btn btn-primary register btn-large" style="position: fixed; top: 9%;right: 2%" data-toggle="modal" data-target="#myModal">Results</a>
 		
 		<!-- main content -->
 			<div class="ip-main container-fluid">
@@ -1859,16 +1889,19 @@
 					</span>
 					<br>
 					<div class="links">
+						<!--
 						<a href="/register/" class="btn btn-primary register btn-large">Register</a>
 						<a href="/contact/" class="btn btn-primary contact btn-large">Contact Us</a>
+					-->
+					<a class="btn btn-primary register btn-large" data-toggle="modal" data-target="#myModal">Results</a>
 					</div>
 					<hr>
 					<h1 style="text-align: center;">Event Organizers</h1>
 						<div class="col-sm-6 col-sm-offset-3 col-xs-12 organizers">
 							<hr>
-							Anmol Shukla-9970631445<br>
-							Saumitra Khanwalkar-8390785649<br>
-							Rahul Choudhary-9766956196<br>
+							Anmol Shukla<br>
+							Saumitra Khanwalkar<br>
+							Rahul Choudhary<br>
 							<hr>
 						</div>
 				</div>
@@ -1880,8 +1913,8 @@
 		</div><!-- /container -->
 		<div class="notice">
 			<span style="font-size:15px !important;color:black;"><u>Notice</u></span></br>
-			1.The Event structure has been updated.<br>
-			2.Details regarding judges/scoring has been added.<br>
+			1.Winners have been declared!<br>
+			2.Winning ideas will be put on the site soon!<br>Click <a style="color:black;cursor:pointer;" data-toggle="modal" data-target="#myModal">here</a> to know more.<br>
 			<button class="btn">close</button>
 		</div>
 

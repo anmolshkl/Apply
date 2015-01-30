@@ -175,7 +175,7 @@ h3 {
 	left: 10px;
 	background: rgba(159,182,205, 0.2) !important;
 	width: 300px;
-	height: 130px;
+	height: 170px;
 	font-size: 15px;
 	padding: 10px;
 	border-radius: 10px;
@@ -187,7 +187,7 @@ h3 {
 	right: 0px;
 	margin-button: 5px;
 	width: 100% !important;
-	height: 25% !important;
+	height: 20% !important;
 }
 .notice button:hover {
 	color: black !important;
